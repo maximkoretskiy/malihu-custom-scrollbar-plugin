@@ -475,7 +475,8 @@ THE SOFTWARE.
 			/*mousewheel scrolling*/
 			if($this.data("mouseWheel")){
 				if(!$this.data("bindEvent_mousewheel")){
-					mCustomScrollBox.bind("mousewheel",function(e,delta){
+					mCustomScrollBox.bind("mousewheel",function(e,delta,deltaX, deltaY){
+						delta = deltaY;
 						var scrollTo,mouseWheelPixels=$this.data("mouseWheelPixels"),absPos=Math.abs(mCSB_container.position().top),
 							draggerPos=mCSB_dragger.position().top,limit=mCSB_draggerContainer.height()-mCSB_dragger.height();
 						if($this.data("normalizeMouseWheelDelta")){
